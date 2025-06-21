@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Theme */
+    --background: 255 255 255 !important;
+    --foreground: 0 0 0 !important;
+    --card: 255 255 255 !important;
+    --card-foreground: 0 0 0 !important;
+    --popover: 255 255 255 !important;
+    --popover-foreground: 0 0 0 !important;
+    
+    /* Primary Blue */
+    --primary: 59 130 246 !important;
+    --primary-foreground: 255 255 255 !important;
+    
+    /* Secondary - Light Blue */
+    --secondary: 239 246 255;
+    --secondary-foreground: 59 130 246;
+    
+    /* Accent - Same as Primary */
+    --accent: 59 130 246;
+    --accent-foreground: 255 255 255;
+    
+    /* Muted Colors */
+    --muted: 245 245 245;
+    --muted-foreground: 100 100 100;
+    
+    /* Border & Input */
+    --border: 200 200 200;
+    --input: 200 200 200;
+    --ring: 59 130 246;
+    
+    /* Status Colors */
+    --success: 59 130 246;          /* Standard Blue */
+    --success-foreground: 255 255 255;
+    --warning: 96 165 250;         /* Lighter Blue */
+    --warning-foreground: 255 255 255;
+    --destructive: 29 78 216;      /* Darker Blue */
+    --destructive-foreground: 255 255 255;
+    
+    --radius: 8px;
+  }
+
+  .dark {
+    /* Dark Theme */
+    --background: 0 0 0 !important;
+    --foreground: 255 255 255 !important;
+    --card: 20 20 20 !important;
+    --card-foreground: 255 255 255 !important;
+    --popover: 20 20 20 !important;
+    --popover-foreground: 255 255 255 !important;
+    
+    /* Primary Blue */
+    --primary: 59 130 246 !important;
+    --primary-foreground: 255 255 255 !important;
+    
+    /* Secondary - Dark Blue */
+    --secondary: 30 58 138;
+    --secondary-foreground: 255 255 255;
+    
+    /* Accent - Same as Primary */
+    --accent: 59 130 246;
+    --accent-foreground: 255 255 255;
+    
+    /* Muted Colors */
+    --muted: 40 40 40;
+    --muted-foreground: 150 150 150;
+    
+    /* Border & Input */
+    --border: 60 60 60;
+    --input: 60 60 60;
+    --ring: 59 130 246;
+    
+    /* Status Colors */
+    --success: 59 130 246;          /* Standard Blue */
+    --success-foreground: 255 255 255;
+    --warning: 96 165 250;         /* Lighter Blue */
+    --warning-foreground: 255 255 255;
+    --destructive: 29 78 216;      /* Darker Blue */
+    --destructive-foreground: 255 255 255;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Simple Button Variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground font-medium px-6 py-3 rounded-lg transition-all duration-200 hover:opacity-90;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground font-medium px-6 py-3 rounded-lg transition-all duration-200 border border-primary;
+  }
+  
+  .btn-outline {
+    @apply border border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium px-6 py-3 rounded-lg transition-all duration-200;
+  }
+  
+  /* Simple Card */
+  .card-simple {
+    @apply bg-card border border-border rounded-lg shadow-sm;
+  }
+  
+  /* Simple Badge */
+  .badge-simple {
+    @apply bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-medium;
+  }
+}
